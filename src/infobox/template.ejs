@@ -1,0 +1,24 @@
+<div id="infobox">
+  <%
+    var day = barrelsPerDay
+    var sec = day / (24 * 60 * 60)
+    var mils = (day / 1000000).toFixed(1)
+    var ones = sec.toFixed(1)
+  %>
+  <div class="infobox-icon">?</div>
+  <div class="infobox-body infobox-hidden">
+    <h2>World Crude Oil Consumption Rate</h2>
+
+    <h4><%= mils %> million barrels per day,<br>
+       <%= ones %> barrels per second,<br>
+       159 litres or 42 gallons per barrel.</h4>
+
+    <p>The falling barrels visualize the average crude oil consumption rate in 2014. The oil consumption statistics are provided by <a href="https://www.indexmundi.com/energy/?product=oil&graph=consumption&display=rank">Index Mundi</a>. Animated on <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">canvas</a> with <a href="https://www.npmjs.com/package/sprinkler">Sprinkler</a>. Emoji graphics by <a href="https://openmoji.org/">OpenMoji</a>.</p>
+
+    <p>
+      Fork me in <a href="https://github.com/axelpale/crude-oil-consumption">GitHub</a>.<br>
+      This is <a href="https://opensource.org/licenses/MIT">MIT licensed</a> open-source software.<br>
+      With ❤ by <a href="http://akselipalen.com/">Axel&nbsp;Pale</a> 2019.
+    </p>
+  </div>
+</div>
