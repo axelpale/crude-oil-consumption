@@ -1,6 +1,5 @@
 img/
-img/openmoji/
-img/openmoji/*.png
+img/*.png
 dist/
 dist/bundle.js
 index.html
