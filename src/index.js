@@ -2,8 +2,8 @@ const consumption = require('./consumption.json')
 const sprinkler = require('sprinkler')
 const infobox = require('./infobox')
 
-var c = document.getElementById('canvas')
-var s = sprinkler.create(c)
+var can = document.getElementById('canvas')
+var s = sprinkler.create(can)
 
 // // Build image distribution.
 // const imageDist = consumption.reduce((acc, datum) => {
@@ -25,9 +25,27 @@ const barrelsPerDay = consumption.reduce((acc, datum) => {
   return acc + 1000 * datum[2]
 }, 0)
 
-s.start(['img/oil-drum-24x32.png'], {
-  burnInSeconds: 10,
-  imagesInSecond: barrelsPerDay / (24 * 60 * 60),
+const barrelsPerSec = barrelsPerDay / (24 * 60 * 60)
+
+// Image pick distribution
+const a = 1
+const b = 1
+const c = 1
+
+// Number of barrels per image
+const n = [15, 16, 20]
+
+// Estimate of average barrels in the image.
+const barrelsPerImg = (a * n[0] + b * n[1] + c * n[2]) / (a + b + c)
+
+s.start({
+  'img/barrels-15_512x512.png': a,
+  'img/barrels-16_512x512.png': b,
+  'img/barrels-20_512x512.png': c
+}, {
+  angle: Math.PI,
+  burnInSeconds: 20,
+  imagesInSecond: barrelsPerSec / barrelsPerImg,
   zMin: 1,
   zMax: 1,
   rMin: -Math.PI / 12,
@@ -38,8 +56,12 @@ s.start(['img/oil-drum-24x32.png'], {
   drMax: 0,
   daMin: 0,
   daMax: 0,
-  dyMin: 500,
-  dyMax: 600
+  dxMin: 0,
+  dxMax: 0,
+  dyMin: 100,
+  dyMax: 200,
+  dzMin: 0,
+  dzMax: 0
 })
 
 document.body.appendChild(infobox({
