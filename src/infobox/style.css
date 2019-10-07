@@ -2,9 +2,10 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  max-width: 16rem;
+  max-width: 18rem;
 
-  background-color: white;
+  color: white;
+  background-color: black;
   border: 1px solid grey;
   border-radius: 0.62rem;
   padding: 0.62rem;
@@ -12,7 +13,7 @@
 
 .infobox-icon {
   font-weight: bold;
-  color: #333;
+  color: #999;
   margin: -0.62rem;
   padding: 0.62rem;
 }
