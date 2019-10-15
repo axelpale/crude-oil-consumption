@@ -1,7 +1,7 @@
 {
   "name": "crude-oil-consumption",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "World crude oil consumption",
   "main": "app.js",
   "scripts": {
@@ -30,6 +30,6 @@
     "webpack-cli": "^3.3.7"
   },
   "dependencies": {
-    "sprinkler": "^1.2.1"
+    "sprinkler": "^1.6.0"
   }
 }

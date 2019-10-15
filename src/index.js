@@ -46,6 +46,7 @@ s.start({
   angle: Math.PI,
   burnInSeconds: 20,
   imagesInSecond: barrelsPerSec / barrelsPerImg,
+  constantDensity: false,
   zMin: 1,
   zMax: 1,
   rMin: -Math.PI / 12,
