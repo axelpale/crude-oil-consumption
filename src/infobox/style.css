@@ -6,6 +6,7 @@
 
   color: white;
   background-color: black;
+  background-color: rgba(0,0,0,0.5);
   border: 1px solid grey;
   border-radius: 0.62rem;
   padding: 0.62rem;
