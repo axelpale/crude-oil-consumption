@@ -9,7 +9,7 @@ var s = sprinkler.create(can)
 // Each subarray has three elements:
 // [int:index, str:country, float:barrels]
 
-const barrelsPerDay = consumption.reduce((acc, datum) => {
+const barrelsPerDay = consumption.reduce(function (acc, datum) {
   return acc + 1000 * datum[2]
 }, 0)
 

@@ -1,7 +1,7 @@
 var template = require('./template.ejs')
 require('./style.css')
 
-module.exports = (opts) => {
+module.exports = function (opts) {
   const htmlString = template(opts)
   const div = document.createElement('div')
   div.innerHTML = htmlString
@@ -10,7 +10,7 @@ module.exports = (opts) => {
   const icon = elem.querySelector('.infobox-icon')
   const body = elem.querySelector('.infobox-body')
 
-  icon.addEventListener('click', ev => {
+  icon.addEventListener('click', function (ev) {
     body.classList.toggle('infobox-hidden')
   })
 
