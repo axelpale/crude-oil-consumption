@@ -1,6 +1,6 @@
-const consumption = require('./consumption.json')
-const sprinkler = require('sprinkler')
-const infobox = require('./infobox')
+var consumption = require('./consumption.json')
+var sprinkler = require('sprinkler')
+var infobox = require('./infobox')
 
 var can = document.getElementById('canvas')
 var s = sprinkler.create(can)
@@ -9,22 +9,22 @@ var s = sprinkler.create(can)
 // Each subarray has three elements:
 // [int:index, str:country, float:barrels]
 
-const barrelsPerDay = consumption.reduce(function (acc, datum) {
+var barrelsPerDay = consumption.reduce(function (acc, datum) {
   return acc + 1000 * datum[2]
 }, 0)
 
-const barrelsPerSec = barrelsPerDay / (24 * 60 * 60)
+var barrelsPerSec = barrelsPerDay / (24 * 60 * 60)
 
 // Image pick distribution
-const a = 1
-const b = 1
-const c = 1
+var a = 1
+var b = 1
+var c = 1
 
 // Number of barrels per image
-const n = [15, 16, 20]
+var n = [15, 16, 20]
 
 // Estimate of average barrels in the image.
-const barrelsPerImg = (a * n[0] + b * n[1] + c * n[2]) / (a + b + c)
+var barrelsPerImg = (a * n[0] + b * n[1] + c * n[2]) / (a + b + c)
 
 s.start({
   'img/barrels-15_512x512.png': a,
