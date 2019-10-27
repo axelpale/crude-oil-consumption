@@ -5,21 +5,9 @@ const infobox = require('./infobox')
 var can = document.getElementById('canvas')
 var s = sprinkler.create(can)
 
-// // Build image distribution.
-// const imageDist = consumption.reduce((acc, datum) => {
-//   let index = datum[0]
-//   let country = datum[1]
-//   let barrels = datum[2]
-//
-//
-//   acc[url] =
-//   if (emojilist.indexOf(emoji.id) >= 0) {
-//     const url = 'img/openmoji/' + emoji.id + '.png'
-//   } else {
-//     console.warn(emoji.id + ' is missing.')
-//   }
-//   return acc
-// }, {})
+// Consuption is an array of arrays.
+// Each subarray has three elements:
+// [int:index, str:country, float:barrels]
 
 const barrelsPerDay = consumption.reduce((acc, datum) => {
   return acc + 1000 * datum[2]
